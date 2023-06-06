@@ -1,12 +1,14 @@
 // 1.Importing
 const express = require("express");
-const empModel = require('./model/model')
+const empModel = require('./model/model');
+const cors = require('cors');
 // 2.Initialization
 const app = new express();
 
 // Middlewares
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
+app.use(cors());
 
 // 3.API Creation
 // app.get(url,callback)
@@ -60,6 +62,6 @@ app.put('/edit/:id',async(req,res)=>{
 
 
 // Port 
-app.listen(3005,(req,res)=>{
-    console.log("Port is running in 3005")
+app.listen(3006,(req,res)=>{
+    console.log("Port is running in 3006")
 })
